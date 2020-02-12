@@ -1,20 +1,21 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-###############################################################
-# Autor: Janssen dos Reis Lima - janssenreislima@gmail.com    #
-# Objetivo: Abrir e fechar registros no no OTRS via API       #
-#           a partir de um problema identificado pelo Zabbix  #
-# Versao: 1.0                                                 #
-###############################################################
+#!/usr/bin/env python3
+# -*- coding: UTF-8 -*-
+
+"""
+  Abrir e fechar registros no no OTRS via API 
+  a partir de um problema identificado pelo Zabbix
+
+  Modificado em 12 de fevereiro de 2020
+  por Vitor Mazuco (vitor.mazuco@gmail.com)
+"""
 
 from otrs.ticket.template import GenericTicketConnectorSOAP
 from otrs.client import GenericInterfaceClient
 from otrs.ticket.objects import Ticket, Article, DynamicField, Attachment
 import sys, os
 
-
-server_uri = 'http://127.0.0.1' # IP do servidor web do OTRS
-webservice_name = 'IntegraZabbix' # Nome do webservice importado no OTRS
+server_uri = 'http://127.0.0.1'
+webservice_name = 'IntegraZabbix'
 client = GenericInterfaceClient(server_uri, tc=GenericTicketConnectorSOAP(webservice_name))
 
 client.tc.SessionCreate(user_login='alerta', password='123456')
@@ -39,7 +40,7 @@ def abrirTicket():
 
     ticket_id, numero_ticket = client.tc.TicketCreate(t, a, [df1, df2, df3])
 
-    comando = "python /usr/lib/zabbix/externalscripts/ack_zabbix.py " + str(evento) + " " + str(numero_ticket)
+    comando = "python /usr/lib/zabbix/externalscripts/ack-zabbix.py " + str(evento) + " " + str(numero_ticket)
     os.system(comando)
 
 def fecharTicket():
@@ -52,3 +53,5 @@ if estado_trigger == "OK":
     fecharTicket()
 else:
     abrirTicket()
+    
+# publiado originalmente em: https://github.com/janssenlima/zabbix-otrs
