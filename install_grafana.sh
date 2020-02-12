@@ -1,5 +1,6 @@
 # install_grafana.sh
 # Script de instalação do Grafana em versão estável em Ubuntu Server 18.04
+# modificado por Vitor Mazuco
 
 curl https://packages.grafana.com/gpg.key | sudo apt-key add -
 sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
