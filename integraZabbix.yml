@@ -2,7 +2,7 @@
 Debugger:
   DebugThreshold: debug
   TestMode: '0'
-Description: Connector OTRS by Janssen dos Reis Lima janssenreislima@gmail.com
+Description: Conexão com o OTRS e com o Zabbix
 FrameworkVersion: 5.0.13
 Provider:
   Operation:
