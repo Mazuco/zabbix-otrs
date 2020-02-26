@@ -54,4 +54,6 @@ if estado_trigger == "OK":
 else:
     abrirTicket()
     
-# publiado originalmente em: https://github.com/janssenlima/zabbix-otrs
+# publiado originalmente em
+# https://github.com/janssenlima/zabbix-otrs
+# https://github.com/Iakim/Zabbix-OTRS
