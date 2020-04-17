@@ -23,5 +23,8 @@ reconhecer_evento = conexao.event.acknowledge({"eventids": sys.argv[1], "message
 #conn.event.acknowledge({"eventids": sys.argv[1], "action": 2, "message": "Ticket " + str(sys.argv[2]) + " create in OTRS."})
 #conn.event.acknowledge({"eventids": sys.argv[1], "action": 4, "message": "Ticket " + str(sys.argv[2]) + " create in OTRS."})
 
-# publicado originalmente: https://github.com/janssenlima/zabbix-otrs
+# publicado originalmente: 
+# https://pypi.org/project/python-otrs/0.1.0/
+# https://github.com/ewsterrenburg/python-otrs
+# https://github.com/janssenlima/zabbix-otrs
 # e pelo https://github.com/Iakim/Zabbix-OTRS
