@@ -54,6 +54,8 @@ if estado_trigger == "OK":
 else:
     abrirTicket()
     
-# publiado originalmente em
+# publicado originalmente: 
+# https://pypi.org/project/python-otrs/0.1.0/
+# https://github.com/ewsterrenburg/python-otrs
 # https://github.com/janssenlima/zabbix-otrs
-# https://github.com/Iakim/Zabbix-OTRS
+# e pelo https://github.com/Iakim/Zabbix-OTRS
